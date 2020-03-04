@@ -14,12 +14,21 @@ namespace P2FixAnAppDotNetCode.Models
         public IEnumerable<CartLine> Lines => GetCartLineList();
 
         /// <summary>
+        /// Backing field for holding list of cart items
+        /// </summary>
+        private List<CartLine> _cartLines;
+        
+        /// <summary>
         /// Return the actual cartline list
         /// </summary>
         /// <returns></returns>
         private List<CartLine> GetCartLineList()
         {
-            return new List<CartLine>();
+            if(_cartLines == null)
+            {
+                _cartLines = new List<CartLine>();
+            }
+            return _cartLines;
         }
 
         /// <summary>
@@ -28,6 +37,23 @@ namespace P2FixAnAppDotNetCode.Models
         public void AddItem(Product product, int quantity)
         {
             // TODO implement the method
+            // Dilip:DONE
+            var cartItems = Lines as List<CartLine>;
+
+            //check if the product alredy exists in the cart
+            CartLine cartItem = cartItems.FirstOrDefault(item => item.Product.Id == product.Id);
+            if (cartItem != null)
+            {
+                //update quantity if product already exists in the cart
+                cartItems.Remove(cartItem);
+                cartItem.Quantity += quantity;
+                cartItems.Add(cartItem);
+            }
+            else
+            {
+                //add the product
+                cartItems.Add(new CartLine() { Product = product, Quantity = quantity });
+            }
         }
 
         /// <summary>
