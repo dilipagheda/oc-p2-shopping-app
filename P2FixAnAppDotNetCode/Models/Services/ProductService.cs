@@ -24,7 +24,7 @@ namespace P2FixAnAppDotNetCode.Models.Services
         {
             // TODO change the return type from array to List<T> and propagate the change
             // thoughout the application
-            // Dilip: DONE the channges. This change also required uncommenting the line from 'Product' unit test in ProductServiceTests.
+            // Dilip: DONE the changes. This change also required uncommenting the line from 'Product' unit test in ProductServiceTests.
             return _productRepository.GetAllProducts();
         }
 
@@ -34,8 +34,8 @@ namespace P2FixAnAppDotNetCode.Models.Services
         public Product GetProductById(int id)
         {
             // TODO implement the method
-
-            return null;
+            // Dilip: DONE
+            return _productRepository.GetProductById(id);
         }
 
         /// <summary>
@@ -46,5 +46,7 @@ namespace P2FixAnAppDotNetCode.Models.Services
             // TODO implement the method
             // update product inventory by using _productRepository.UpdateProductStocks() method.
         }
+
+
     }
 }
