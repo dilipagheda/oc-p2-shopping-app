@@ -11,7 +11,11 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
 
         public OrderRepository()
         {
-            _orders = new List<Order>();
+            if(_orders == null)
+            {
+                _orders = new List<Order>();
+            }
+            
         }
 
         /// <summary>
