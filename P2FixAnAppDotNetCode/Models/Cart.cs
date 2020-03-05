@@ -102,7 +102,9 @@ namespace P2FixAnAppDotNetCode.Models
         public Product FindProductInCartLines(int productId)
         {
             // TODO implement the method
-            return null;
+            // Dilip: Done
+            var cartItems = Lines as List<CartLine>;
+            return cartItems.FirstOrDefault(item => item.Product.Id == productId).Product;
         }
 
         /// <summary>
