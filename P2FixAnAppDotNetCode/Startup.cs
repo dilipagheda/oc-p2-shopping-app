@@ -29,9 +29,9 @@ namespace P2FixAnAppDotNetCode
             services.AddSingleton<ICart, Cart>();
             services.AddSingleton<ILanguageService, LanguageService>();
             services.AddTransient<IProductService, ProductService>();
-            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddSingleton<IProductRepository, ProductRepository>();
             services.AddTransient<IOrderService, OrderService>();
-            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddSingleton<IOrderRepository, OrderRepository>();
             services.AddMemoryCache();
             services.AddSession();
             services.AddMvc()
