@@ -92,6 +92,10 @@ namespace P2FixAnAppDotNetCode.Models
             {
                 totalProducts += item.Quantity;
             });
+            if(totalProducts == 0)
+            {
+                return 0;
+            }
             averageValue = GetTotalValue() / totalProducts;
             return averageValue;
         }
