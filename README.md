@@ -46,14 +46,6 @@ Duration: 0:00:00.05
 1 test(s) passed
 ```
 
-### After
-```
-Group Name: P2FixAnAppDotNetCode.Tests
-Duration: 0:00:00.046
-0 test(s) failed
-0 test(s) skipped
-8 test(s) passed
-```
 ```
 PM> dotnet test
 Test run for C:\Projects\oc-p2-shopping-app\P2FixAnAppDotNetCode.Tests\bin\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Tests.dll(.NETCoreApp,Version=v2.0)
@@ -142,6 +134,14 @@ Total tests: 8
  Total time: 1.7254 Seconds
 ```
 
+### After
+```
+Group Name: P2FixAnAppDotNetCode.Tests
+Duration: 0:00:00.046
+0 test(s) failed
+0 test(s) skipped
+8 test(s) passed
+```
 
 ```
 PM> dotnet test --logger trx
