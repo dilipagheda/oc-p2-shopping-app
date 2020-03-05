@@ -68,6 +68,7 @@ namespace P2FixAnAppDotNetCode.Models
         public double GetTotalValue()
         {
             // TODO implement the method
+            // Dilip:DONE
             var cartItems = Lines as List<CartLine>;
             double total = 0;
             cartItems.ForEach(item =>
@@ -83,7 +84,16 @@ namespace P2FixAnAppDotNetCode.Models
         public double GetAverageValue()
         {
             // TODO implement the method
-            return 0.0;
+            // Dilip:DONE
+            var cartItems = Lines as List<CartLine>;
+            double averageValue = 0;
+            double totalProducts = 0;
+            cartItems.ForEach(item =>
+            {
+                totalProducts += item.Quantity;
+            });
+            averageValue = GetTotalValue() / totalProducts;
+            return averageValue;
         }
 
         /// <summary>
