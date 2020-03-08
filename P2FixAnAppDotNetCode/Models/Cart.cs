@@ -36,7 +36,6 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>//
         public void AddItem(Product product, int quantity)
         {
-            // TODO implement the method
             // Dilip:DONE
             var cartItems = Lines as List<CartLine>;
 
@@ -67,7 +66,6 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public double GetTotalValue()
         {
-            // TODO implement the method
             // Dilip:DONE
             var cartItems = Lines as List<CartLine>;
             double total = 0;
@@ -83,7 +81,6 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public double GetAverageValue()
         {
-            // TODO implement the method
             // Dilip:DONE
             var cartItems = Lines as List<CartLine>;
             double averageValue = 0;
@@ -105,7 +102,6 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public Product FindProductInCartLines(int productId)
         {
-            // TODO implement the method
             // Dilip: Done
             var cartItems = Lines as List<CartLine>;
             return cartItems.FirstOrDefault(item => item.Product.Id == productId).Product;

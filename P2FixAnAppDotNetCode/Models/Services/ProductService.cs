@@ -22,8 +22,6 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         public List<Product> GetAllProducts()
         {
-            // TODO change the return type from array to List<T> and propagate the change
-            // thoughout the application
             // Dilip: DONE the changes. This change also required uncommenting the line from 'Product' unit test in ProductServiceTests.
             return _productRepository.GetAllProducts();
         }
@@ -33,7 +31,6 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         public Product GetProductById(int id)
         {
-            // TODO implement the method
             // Dilip: DONE
             return _productRepository.GetProductById(id);
         }
@@ -43,7 +40,6 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         public void UpdateProductQuantities(Cart cart)
         {
-            // TODO implement the method
             // update product inventory by using _productRepository.UpdateProductStocks() method.
             // Dilip:Done
             var cartLines = cart.Lines as List<CartLine>;
